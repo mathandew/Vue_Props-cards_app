@@ -2,13 +2,15 @@
   <div class="container">
     <h1>📦 Vue Cards App</h1>
 
-    <Card
-      v-for="(card, index) in cards"
-      :key="index"
-      :title="card.title"
-      :description="card.description"
-      @remove="removeCard(index)"
-    />
+    <div class="card-grid">
+      <Card
+        v-for="(card, index) in cards"
+        :key="index"
+        :title="card.title"
+        :description="card.description"
+        @remove="removeCard(index)"
+      />
+    </div>
   </div>
 </template>
 
@@ -36,8 +38,16 @@ export default {
 
 <style>
 .container {
-  max-width: 600px;
+  max-width: 900px;
   margin: auto;
+  padding: 20px;
   text-align: center;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
 </style>
